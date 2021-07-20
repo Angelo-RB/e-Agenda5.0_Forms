@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39AAB2A7-A2A6-484B-B028-3731685CD7B6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>eAgenda.WindowsApp</RootNamespace>
+    <AssemblyName>eAgenda.WindowsApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MenuInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuInicial.Designer.cs">
+      <DependentUpon>MenuInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TarefaModule\PrioridadeCb.cs" />
+    <Compile Include="TarefaModule\TelaTarefa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TarefaModule\TelaTarefa.Designer.cs">
+      <DependentUpon>TelaTarefa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompromissoModule\TelaCompromisso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompromissoModule\TelaCompromisso.Designer.cs">
+      <DependentUpon>TelaCompromisso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContatoModule\TelaContato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContatoModule\TelaContato.Designer.cs">
+      <DependentUpon>TelaContato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MenuInicial.resx">
+      <DependentUpon>MenuInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TarefaModule\TelaTarefa.resx">
+      <DependentUpon>TelaTarefa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompromissoModule\TelaCompromisso.resx">
+      <DependentUpon>TelaCompromisso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContatoModule\TelaContato.resx">
+      <DependentUpon>TelaContato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\e-Agenda.Dominio\eAgenda.Dominio.csproj">
+      <Project>{d961c68a-ebeb-40ac-b35d-469267ee4514}</Project>
+      <Name>eAgenda.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eAgenda.Controladores\eAgenda.Controladores.csproj">
+      <Project>{4017e73e-8feb-4de8-8c3c-66178b41a902}</Project>
+      <Name>eAgenda.Controladores</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CadastrarIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact.png" />
+    <None Include="Resources\esboco-da-ferramenta-desenhada-a-mao-da-agenda.png" />
+    <None Include="Resources\Close_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\assignment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compromisso.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
